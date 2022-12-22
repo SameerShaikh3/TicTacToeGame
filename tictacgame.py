@@ -31,26 +31,21 @@ def check_winner():
             buttons[row][2].config(bg="yellow")
             return True
     for column in range(3):
-        if buttons[column][0]['text'] == buttons[column][1]['text'] == buttons[column][2]['text'] != "":
-            buttons[column][0].config(bg="yellow")
-            buttons[column][1].config(bg="yellow")
-            buttons[column][2].config(bg="yellow")
+        if buttons[0][column]['text'] == buttons[1][column]['text'] == buttons[2][column]['text'] != "":
+            buttons[0][column].config(bg="yellow")
+            buttons[1][column].config(bg="yellow")
+            buttons[2][column].config(bg="yellow")
             return True
     if buttons[0][0]['text']  == buttons[1][1]['text'] ==buttons[2][2]['text'] !="":
         buttons[0][0].config(bg="yellow")
         buttons[1][1].config(bg="yellow")
         buttons[2][2].config(bg="yellow")
         return True
-    elif buttons[0][2]['text'] == buttons[1][1] == buttons[2][0] !="":
+    if buttons[0][2]['text']  == buttons[1][1]['text'] ==buttons[2][0]['text'] !="":
         buttons[0][2].config(bg="yellow")
         buttons[1][1].config(bg="yellow")
         buttons[2][0].config(bg="yellow")
         return True
-    elif empty_spaces() is False:
-        for row in range(3):
-            for column in range(3):
-                buttons[row][column].config(bg="green")
-        return "Tie"
     else:
         return False
 
